@@ -13,7 +13,7 @@ jobs:
       - name: Get branch names
         id: branch-names
         # usamos una versión no vulnerable documentada (v9 en el repo)
-        uses: tj-actions/branch-names@v9
+        uses: tj-actions/branch-names@v8
 
       - name: Checkout (opcional, si necesitas el repo)
         uses: actions/checkout@v4
