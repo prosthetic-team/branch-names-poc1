@@ -3,7 +3,7 @@ name: Simple branch-names demo
 on:
   push:
     branches:
-      - "**"
+      - "main"
   pull_request:
 
 jobs:
