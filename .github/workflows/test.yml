@@ -1,10 +1,9 @@
 name: Simple branch-names demo
 
 on:
-  push:
+  pull_request:
     branches:
       - "main"
-  pull_request:
 
 jobs:
   show-branch:
