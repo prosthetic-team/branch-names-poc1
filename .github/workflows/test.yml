@@ -1,0 +1,25 @@
+name: Simple branch-names demo
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+
+jobs:
+  show-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get branch names
+        id: branch-names
+        # usamos una versión no vulnerable documentada (v9 en el repo)
+        uses: tj-actions/branch-names@v9
+
+      - name: Checkout (opcional, si necesitas el repo)
+        uses: actions/checkout@v4
+
+      - name: Print branch info
+        run: |
+          echo "Current branch: ${{ steps.branch-names.outputs.current_branch }}"
+          echo "Is default?: ${{ steps.branch-names.outputs.is_default }}"
+          echo "Base ref (for PRs): ${{ steps.branch-names.outputs.base_ref_branch }}"
